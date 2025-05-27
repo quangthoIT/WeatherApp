@@ -21,5 +21,73 @@
     <script src="./assets/js/app.js" type="module"></script>
     <script src="./assets/js/route.js" type="module"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">
+          <img
+            src="./assets/images/logo.png"
+            alt="Weather App Logo"
+            width="360"
+            height="60"
+          />
+        </a>
+
+        <div class="search-view active" data-search-view>
+          <div class="search-wrapper">
+            <input
+              type="search"
+              name="search"
+              placeholder="Search for a city..."
+              autocomplete="off"
+              class="search-field"
+              data-search-field
+            />
+            <span class="m-icon">search</span>
+            <button
+              class="icon-btn leading-icon has-state"
+              aria-lable="close search"
+              data-search-toggler
+            >
+              <span class="m-icon">arrow_back</span>
+            </button>
+          </div>
+
+          <div class="search-result" data-search-result>
+            <ul class="view-list" data-search-list>
+              <li class="view-item">
+                <span class="m-icon">location_on</span>
+                <div>
+                  <p class="item-title">Ho Chi Minh City</p>
+                  <p class="label-2 item-subtitle">
+                    State of Ho Chi Minh City, VietNam
+                  </p>
+                </div>
+                <a href="#" class="item-link has-state" data-search-toggler></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button
+            class="icon-btn has-state"
+            aria-label="open search"
+            data-search-toggler
+          >
+            <span class="m-icon icon">search</span>
+          </button>
+          <a
+            href="#/current-location"
+            class="btn-primary has-state"
+            data-current-location-btn
+          >
+            <span class="m-icon">my_location</span>
+            <span class="span">Current Location</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>
