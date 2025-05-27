@@ -1,0 +1,167 @@
+:root {
+  /* Color */
+  --primary: #b5a1e5;
+  --on-primary: #100e17;
+  --background: #131214;
+  --on-background: #eae6f2;
+  --surface: #1d1c1f;
+  --on-surface: #dddae5;
+  --on-surface-variant: #7b7980;
+  --on-surface-variant-2: #b9b6bf;
+  --outline: #3e3d40;
+  --bg-aqi-1: #89e589;
+  --on-bg-aqi-1: #1f331f;
+  --bg-aqi-2: #e5dd89;
+  --on-bg-aqi-2: #33311f;
+  --bg-aqi-3: #e5c089;
+  --on-bg-aqi-3: #332b1f;
+  --bg-aqi-4: #e58989;
+  --on-bg-aqi-4: #331f1f;
+  --bg-aqi-5: #e589b7;
+  --on-bg-aqi-5: #331f29;
+  --white: hsl(0, 0%, 100%);
+  --white-alpha-4: hsla(0, 0%, 100%, 0.04);
+  --white-alpha-8: hsla(0, 0%, 100%, 0.08);
+  --black-alpha-10: hsla(0, 0%, 0%, 0.1);
+  /* Gradient */
+  --gradient-1: linear-gradient(
+    180deg,
+    hsla(270, 5%, 7%, 0) 0%,
+    hsla(270, 5%, 7%, 0.8) 65%,
+    hsl(270, 5%, 7%) 100%
+  );
+  --gradient-2: linear-gradient(
+    180deg,
+    hsla(260, 5%, 12%, 0) 0%,
+    hsla(260, 5%, 12%, 0.8) 65%,
+    hsl(260, 5%, 12%) 100%
+  );
+  /* Font family*/
+  --ff-nunito-sans: "Nunito Sans", sans-serif;
+  /* Font size */
+  --heading: 5.6rem;
+  --title-1: 2rem;
+  --title-2: 1.8rem;
+  --title-3: 1.6rem;
+  --body-1: 2.2rem;
+  --body-2: 2rem;
+  --body-3: 1.6rem;
+  --label-1: 1.4rem;
+  --label-2: 1.2rem;
+  /* Font weight */
+  --weight-regular: 400;
+  --weight-semiBold: 600;
+  /* Box shadow */
+  --shadow-1: 0px 1px 3px hsla(0, 0%, 0%, 0.5);
+  --shadow-2: 0px 3px 6px hsla(0, 0%, 0%, 0.4);
+  /* Border radius */
+  --radius-28: 28px;
+  --radius-16: 16px;
+  --radius-pill: 500px;
+  --radius-circle: 50%;
+  /* Transition */
+  --transition-short: 100ms ease;
+}
+
+/* ----- Reset ------ */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a,
+img,
+span,
+input,
+button {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+input,
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+input {
+  width: 100%;
+}
+button {
+  cursor: pointer;
+}
+sub {
+  vertical-align: baseline;
+}
+sup {
+  vertical-align: top;
+}
+sub,
+sup {
+  font-size: 0.75em;
+}
+html {
+  font-family: var(--ff-nunito-sans);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: var(--body-3);
+  color: var(--on-background);
+  background-color: var(--background);
+  overflow: hidden;
+}
+:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+::selection {
+  background-color: var(--white-alpha-8);
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--white-alpha-8);
+  border-radius: var(--radius-pill);
+}
+@font-face {
+  font-family: "Material Symbols Rounded";
+  src: url("../font/material-symbol-rounded.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+.m-icon {
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2.4rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-decoration: none;
+  text-transform: none;
+  direction: ltr;
+  word-wrap: normal;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  height: 1em;
+  width: 1em;
+  overflow: hidden;
+}
