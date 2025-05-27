@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <meta name="title" content="Weather App" />
+    <title>weatherio</title>
+    <meta name="title" content="weatherio" />
     <meta
       name="description"
       content="A simple weather application to check current weather conditions."
@@ -27,14 +27,14 @@
       <div class="container">
         <a href="#" class="logo">
           <img
-            src="./assets/images/logo.png"
+            src="./assets/images/logoWeatherio.png"
             alt="Weather App Logo"
             width="360"
             height="60"
           />
         </a>
 
-        <div class="search-view active" data-search-view>
+        <div class="search-view" data-search-view>
           <div class="search-wrapper">
             <input
               type="search"
@@ -89,5 +89,41 @@
         </div>
       </div>
     </header>
+
+    <!-- Main Content -->
+    <main>
+      <article class="container">
+        <div class="content-left">
+          <section class="section current-weather">
+            <div class="card card-lg current-weather-card">
+              <h2 class="title-2 card-title">Now</h2>
+              <div class="weapper">
+                <p class="heading">25&deg;<sup>c</sup></p>
+                <img
+                  src="./assets/images/weather_icons/01d.png"
+                  width="64"
+                  height="64"
+                  alt="Overcast Clouds"
+                  class="weather-icon"
+                />
+              </div>
+
+              <p class="body-3">Overcast Cloulds</p>
+              <ul class="meta-list">
+                <li class="meta-item">
+                  <span class="m-icon">calendar_today</span>
+                  <p class="title-3 meta-text">Wednesday 28, May</p>
+                </li>
+
+                <li class="meta-item">
+                  <span class="m-icon">location_on</span>
+                  <p class="title-3 meta-text">Ho Chi Minh City, VietNam</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
   </body>
 </html>
