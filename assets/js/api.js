@@ -14,20 +14,20 @@ export const url = {
   currentWeather(lat, lon) {
     return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
   },
-  forecasrtWeather(lat, lon) {
+  forecasrt(lat, lon) {
     return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`;
   },
   airPollution(lat, lon) {
     return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}`;
   },
-  reverseGeocoding(lat, lon) {
+  reverseGeo(lat, lon) {
     return `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5`;
   },
   /**
-   * 
+   *
    * @param {string} query City name or coordinates
    */
-  geocoding(query) {
+  geo(query) {
     return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`;
   },
 };

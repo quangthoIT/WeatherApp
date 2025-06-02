@@ -79,36 +79,13 @@
 
     <!-- Current Weather -->
     <main>
-      <article class="container">
+      <article class="container" data-container>
         <div class="content-left">
-          <section class="section current-weather">
-            <div class="card card-lg current-weather-card">
-              <h2 class="title-2 card-title">Now</h2>
-              <div class="weapper">
-                <p class="heading">25&deg;<sup>c</sup></p>
-                <img
-                  src="./assets/images/weather_icons/01d.png"
-                  width="64"
-                  height="64"
-                  alt="Overcast Clouds"
-                  class="weather-icon"
-                />
-              </div>
-
-              <p class="body-3">Overcast Cloulds</p>
-              <ul class="meta-list">
-                <li class="meta-item">
-                  <span class="m-icon">calendar_today</span>
-                  <p class="title-3 meta-text">Wednesday 28, May</p>
-                </li>
-
-                <li class="meta-item">
-                  <span class="m-icon">location_on</span>
-                  <p class="title-3 meta-text">Ho Chi Minh City, Viet Nam</p>
-                </li>
-              </ul>
-            </div>
-          </section>
+          <section
+            class="section current-weather"
+            aria-label="current weather"
+            data-current-weather
+          ></section>
 
           <!-- 5 Day Forecast -->
           <section
