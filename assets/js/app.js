@@ -48,22 +48,23 @@ searchField.addEventListener("input", function () {
         for (const { name, lat, lon, country, state } of locations) {
           const searchItem = document.createElement("li");
           searchItem.classList.add("view-item");
-
           searchItem.innerHTML = `
-                <span class="m-icon">location_on</span>
-                <div>
-                  <p class="item-title">${name}</p>
-                  <p class="label-2 item-subtitle">
-                    ${state || ""} ${country}
-                  </p>
-                </div>
-                <a href="#/weather?lat=${lat}&lon=${lon}" class="item-link has-state" aria-label="${name} weather" data-search-toggler></a>
+          <span class="m-icon">location_on</span>
+          <div>
+            <p class="item-title">${name}</p>
+            <p class="label-2 item-subtitle">
+              ${state || ""} ${country}
+            </p>
+          </div>
+          <a href="#/weather?lat=${lat}&lon=${lon}" class="item-link has-state" aria-label="${name} weather" data-search-toggler></a>
           `;
+
           searchResult
             .querySelector("[data-search-list]")
             .appendChild(searchItem);
           items.push(searchItem.querySelector("[data-search-toggler]"));
         }
+
         addEventOnElements(items, "click", function () {
           toggleSearch();
           searchResult.classList.remove("active");
@@ -86,9 +87,9 @@ const errorContent = document.querySelector("[data-error-content]");
  * @param {number} lon Longitude
  */
 export const updateWeather = function (lat, lon) {
-  // loading.style.display = "grid";
-  // container.style.overflowY = "hidden";
-  // container.classList.remove("fade-in");
+  loading.style.display = "grid";
+  container.style.overflowY = "hidden";
+  container.classList.remove("fade-in");
   errorContent.style.display = "none";
 
   const currentWeatherSection = document.querySelector(
@@ -262,6 +263,119 @@ export const updateWeather = function (lat, lon) {
       </div>
       `;
       highlightSection.appendChild(card);
+    });
+
+    fetchData(url.forecast(lat, lon), function (forecast) {
+      const {
+        list: forecastList,
+        city: { timezone },
+      } = forecast;
+
+      hourlySetion.innerHTML = `
+      <h2 class="title-2">Today at</h2>
+      <div class="slider-container">
+        <ul class="slider-list" data-temp>
+        </ul>
+
+        <ul class="slider-list" data-wind>
+        </ul>
+      </div>
+      `;
+
+      for (const [index, data] of forecastList.entries()) {
+        if (index > 7) break;
+        const {
+          dt: dateTimeUnix,
+          main: { temp },
+          weather,
+          wind: { deg: windDirection, speed: windSpeed },
+        } = data;
+
+        const [{ icon, description }] = weather;
+
+        const tempLi = document.createElement("li");
+        tempLi.classList.add("slider-item");
+        tempLi.innerHTML = `
+        <div class="card card-sm slider-card">
+          <p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
+          <img
+            src="./assets/images/weather_icons/${icon}.png"
+            width="48"
+            height="48"
+            loading="lazy"
+            alt="${description}"
+            class="weather-icon"
+            title="${description}"
+          />
+          <p class="body-3">${parseInt(temp)}&deg;</p>
+        </div>
+        `;
+        hourlySetion.querySelector("[data-temp]").appendChild(tempLi);
+
+        const windLi = document.createElement("li");
+        windLi.classList.add("slider-item");
+
+        windLi.innerHTML = `
+        <div class="card card-sm slider-card">
+          <p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
+          <img
+            src="./assets/images/weather_icons/direction.png"
+            width="48"
+            height="48"
+            loading="lazy"
+            alt="Overcast Clouds"
+            class="weather-icon"
+            style="transform: rotate(${windDirection - 180}deg")
+          />
+          <p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))} km/h</p>
+        </div>
+        `;
+        hourlySetion.querySelector("[data-wind]").appendChild(windLi);
+      }
+
+      forecastSection.innerHTML = `
+      <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+      <div class="card card-lg forecast-card">
+        <ul data-forecast-list>
+        </ul>
+      </div>
+      `;
+      for (let i = 7, len = forecastList.length; i < len; i += 8) {
+        const {
+          main: { temp_max },
+          dt_txt,
+        } = forecastList[i];
+        const [{ icon, description }] = weather;
+        const date = new Date(dt_txt);
+
+        const li = document.createElement("li");
+        li.classList.add("card-item");
+
+        li.innerHTML = `
+        <div class="icon-wrapper">
+          <img
+            src="./assets/images/weather_icons/${icon}.png"
+            width="36"
+            height="36"
+            alt="${description}"
+            class="weather-icon"
+            title="${description}"
+          />
+          <span class="span"><p class="title-2">${parseInt(
+            temp_max,
+          )}&deg;</p></span>
+        </div>
+        <p class="label-1">${date.getDate()} ${
+          module.monthNames[date.getUTCMonth()]
+        }</p>
+        <p class="label-1">${module.weekDayNames[date.getUTCDay()]}</p>
+        `;
+        forecastSection.querySelector("[data-forecast-list]").appendChild(li);
+      }
+
+      loading.style.display = "none";
+      container.style.overflowY = "overlay";
+      container.classList.add("fade-in");
     });
   });
 };
