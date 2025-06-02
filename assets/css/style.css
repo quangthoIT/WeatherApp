@@ -570,9 +570,12 @@ article.container::before {
   overflow-x: auto;
   margin-inline: -16px;
 }
-.slider-container::-webkit-scrollbar {
-  display: none;
-}
+
+/* Tắt hiển thị thanh trượt */
+/* .slider-container::-webkit-scrollbar {
+  display: none; 
+} */
+
 .slider-list {
   display: flex;
   gap: 12px;
@@ -773,6 +776,7 @@ article.container::before {
   .highlight-card-two .card-item {
     column-gap: 24px;
   }
+
   .header .icon-btn {
     display: none;
   }
@@ -803,7 +807,7 @@ article.container::before {
     display: block;
   }
   .search-field,
-  .search-view .search-list {
+  .search-view .view-list {
     background-color: var(--surface);
   }
   .search-field {
@@ -814,7 +818,7 @@ article.container::before {
   .search-view:not(:focus-within) .search-result {
     display: none;
   }
-  .search-view:focus-within .search-result.search-view.active {
+  .search-view:focus-within .search-result {
     display: block;
   }
   .search-view:has(.search-result.active):focus-within .search-field {
@@ -827,12 +831,13 @@ article.container::before {
     left: 0;
     width: 100%;
     max-height: 360px;
+    background-color: var(--surface);
     border-radius: 0 0 var(--radius-28) var(--radius-28);
     border-block-start: 1px solid var(--outline);
     overflow-y: auto;
     overflow-y: overlay;
   }
-  .search-view .search-list:empty {
+  .search-view .view-list:empty {
     min-height: 120px;
   }
   .search-view .view-list::-webkit-scrollbar-button {
@@ -844,6 +849,7 @@ article.container::before {
   .search-view:is(:focus-within, :has(.view-list):focus-within) {
     filter: drop-shadow(var(--shadow-2));
   }
+
   main {
     height: calc(100vh - 120px);
     height: calc(100svh - 120px);
