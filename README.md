@@ -20,7 +20,7 @@
 
 ## 🚀 Live Demo
 
->#### [https://quangthoit.github.io/weatherio/](https://quangthoit.github.io/weatherio/)
+>### [https://quangthoit.github.io/weatherio/](https://quangthoit.github.io/weatherio/)
 
 ## 🛠️ Technologies Used
 
@@ -60,7 +60,7 @@
 
 ## 🌐 OpenWeatherMap API
 
->#### [https://openweathermap.org/](https://openweathermap.org/)
+>### [https://openweathermap.org/](https://openweathermap.org/)
 
 ## 📁 Project Structure
 
@@ -105,7 +105,7 @@ weatherio/
 
 ## 👨‍💻 Author
 
->#### QuangThoIT: [https://github.com/quangthoIT/](https://github.com/quangthoIT/)
+>### QuangThoIT: [https://github.com/quangthoIT/](https://github.com/quangthoIT/)
 
 ## 🙏 Acknowledgments
 
