@@ -2,7 +2,7 @@
 
 <div align="center">
 <img src="./assets/images/interface.png" alt="App Interface" title="App Interface" width="600"/>
-<p><em>App Interface</em></p>
+<p><em>Weatherio Interface</em></p>
 </div>
 
 ## 🌟 Main Features
@@ -67,18 +67,18 @@
 ```
 weatherio/
 │
-├── assets/                 # Assets folder
-│   ├── css/                # Stylesheets
-│   ├── font/               # Web fonts
-│   ├── images/             # Images, icons
-│   └── js/                 # JavaScript modules
-│       ├── api.js          # API handling
-│       ├── app.js          # Main application logic
-│       ├── module.js       # Utility modules
-│       └── route.js        # Routing logic
-├── favicon.svg             # Website favicon
-├── index.html              # Main page
-└── README.md               # Documentation
+├── assets/                   # Assets folder
+│   ├── css/                  # Stylesheets
+│   ├── font/                 # Web fonts
+│   ├── images/               # Images, icons
+│   └── js/                   # JavaScript modules
+│       ├── api.js            # API handling
+│       ├── app.js            # Main application logic
+│       ├── module.js         # Utility modules
+│       └── route.js          # Routing logic
+├── favicon_weatherio.svg     # Website favicon
+├── index.html                # Main page
+└── README.md                 # Documentation
 ```
 
 ## 🎨 Highlights
