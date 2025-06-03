@@ -18,7 +18,7 @@ const searchTogglers = document.querySelectorAll("[data-search-toggler]");
 const toggleSearch = () => {
   searchView.classList.toggle("active");
   searchResult.innerHTML = ""; // Xóa kết quả tìm kiếm
-  // searchField.value = ""; // Xóa nội dung đã nhập
+  searchField.value = ""; // Xóa nội dung đã nhập
 };
 addEventOnElements(searchTogglers, "click", toggleSearch);
 
@@ -347,10 +347,12 @@ export const updateWeather = function (lat, lon) {
       for (let i = 7, len = forecastList.length; i < len; i += 8) {
         const {
           main: { temp_max },
-          dt_txt,
+          weather,
+          dt: dateUnix,
         } = forecastList[i];
         const [{ icon, description }] = weather;
-        const date = new Date(dt_txt);
+        // const date = new Date(dt_txt);
+        const date = new Date((dateUnix + timezone) * 1000);
 
         const li = document.createElement("li");
         li.classList.add("card-item");

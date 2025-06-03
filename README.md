@@ -1,7 +1,7 @@
 # WeatherIO API 🌤️
 
 <div align="center">
-<img src="./assets/images/interface.png" alt="App Interface" title="App Interface" width="600"/>
+<img src="./assets/images/interface.png" alt="App Interface" title="App Interface" width="800"/>
 <p><em>Weatherio Interface</em></p>
 </div>
 

@@ -258,8 +258,8 @@ body {
 }
 .title-2 {
   font-size: var(--title-2);
-  /* margin-block-end: 12px; */
-  margin: 12px 0;
+  margin-block-end: 12px;
+  /* margin: 12px 0; */
 }
 .title-3 {
   font-size: var(--title-3);
